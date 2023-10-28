@@ -22,6 +22,10 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun providesNetworkJson(): Json = Json
+
+    @Provides
+    @Singleton
     fun provideLoggingInterceptor(): Interceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
     }

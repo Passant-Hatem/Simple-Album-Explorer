@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/albumDetailsFragment"
         android:name="com.example.simplealbumexplorer.modules.album.presentation.AlbumDetailsFragment"
-        android:label="AlbumDetailsFragment" />
+        android:label="AlbumDetailsFragment" >
+        <argument
+            android:name="album_id"
+            app:argType="string" />
+    </fragment>
 </navigation>
