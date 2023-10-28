@@ -19,5 +19,8 @@
         <argument
             android:name="album_id"
             app:argType="string" />
+        <argument
+            android:name="album_title"
+            app:argType="string" />
     </fragment>
 </navigation>

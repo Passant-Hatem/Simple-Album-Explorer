@@ -28,7 +28,7 @@ import com.example.simplealbumexplorer.modules.user.presentation.model.UserProfi
 fun UserProfileScreen(
     uiModel: UserProfileUIModel,
     getUserData: Action,
-    onAlbumItemClicked: Consumer<String>
+    onAlbumItemClicked: Consumer<Album>
 ) = with(uiModel) {
     if (isError)
         ErrorScreen(errorMsg = error!!, onRetryClicked = getUserData)
@@ -49,7 +49,7 @@ fun UserProfileScreen(
 fun UserProfileScreenContent(
     user: User,
     albums: List<Album>,
-    onItemClicked: Consumer<String>
+    onItemClicked: Consumer<Album>
 ) {
     Column(
         Modifier
@@ -87,7 +87,7 @@ fun UserHeader(user: User) = with(user) {
 @Composable
 fun AlbumList(
     albums: List<Album>,
-    onItemClicked: Consumer<String>
+    onItemClicked: Consumer<Album>
 ) {
     LazyColumn {
         items(albums) { album ->
@@ -97,7 +97,7 @@ fun AlbumList(
                 fontSize = 16.sp,
                 modifier = Modifier
                     .padding(vertical = 12.dp)
-                    .clickable { onItemClicked(album.id.toString()) }
+                    .clickable { onItemClicked(album) }
             )
         }
     }

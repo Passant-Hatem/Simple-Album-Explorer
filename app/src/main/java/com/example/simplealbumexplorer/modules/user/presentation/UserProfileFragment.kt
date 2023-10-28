@@ -8,6 +8,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.simplealbumexplorer.modules.user.domain.model.Album
 import com.example.simplealbumexplorer.modules.user.presentation.model.toUIModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,8 +33,8 @@ class UserProfileFragment : Fragment() {
     }
 
 
-    private fun navigateToAlbumDetails(albumId: String){
-        val action = UserProfileFragmentDirections.actionUserProfileFragmentToAlbumDetailsFragment(albumId)
+    private fun navigateToAlbumDetails(album: Album) = with(album){
+        val action = UserProfileFragmentDirections.actionUserProfileFragmentToAlbumDetailsFragment(id.toString(), title)
         findNavController().navigate(action)
     }
 

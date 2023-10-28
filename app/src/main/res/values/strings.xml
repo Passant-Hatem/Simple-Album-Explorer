@@ -3,4 +3,5 @@
     <string name="profile_label">Profile</string>
     <string name="album_label">My Albums</string>
     <string name="retry_label">Retry</string>
+    <string name="search_fiels_hint">Search in images</string>
 </resources>
