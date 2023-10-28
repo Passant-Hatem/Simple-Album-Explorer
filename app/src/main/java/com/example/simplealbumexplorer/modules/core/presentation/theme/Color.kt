@@ -1,4 +1,4 @@
-package com.example.simplealbumexplorer.ui.theme
+package com.example.simplealbumexplorer.modules.core.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
